@@ -83,14 +83,6 @@
      
    <div class="register-title">Admin Registration</div>
 
-<?php if($this->session->flashdata('success')): ?>
-  <div id="flash-success" data-message="<?= $this->session->flashdata('success') ?>"></div>
-<?php endif; ?>
-
-<?php if($this->session->flashdata('error')): ?>
-  <div id="flash-error" data-message="<?= $this->session->flashdata('error') ?>"></div>
-<?php endif; ?>
-
 <form id="registerForm" action="<?= base_url('register/save') ?>" method="post" novalidate>
   <div class="input-group mb-3">
     <input type="text" name="name" class="form-control" placeholder="Full Name" required>

@@ -42,14 +42,5 @@ $(document).ready(function () {
     $(this).removeClass('is-invalid');
   });
 
-  const success = $('#flash-success').data('message');
-  const error = $('#flash-error').data('message');
 
-  if (success) {
-    toastr.success(success, 'Success');
-  }
-
-  if (error) {
-    toastr.error(error, 'Error');
-  }
 });
