@@ -94,6 +94,11 @@ $(document).ready(function () {
   lengthChange: false,
   autoWidth: false,
   colReorder: true, 
+  
+      language: {
+        emptyTable: "No tasks available yet.",
+        zeroRecords: "Oops! No tasks match your search. "
+    },
   dom: '<"d-flex justify-content-between align-items-center mb-2"Bf>rt<"d-flex justify-content-between mt-2"ip>',
   buttons: [
     { extend: 'copy',  className: 'btn btn-sm btn-secondary' },
