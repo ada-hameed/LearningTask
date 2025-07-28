@@ -27,18 +27,6 @@ $(document).ready(function () {
   $('input').on('input', function () {
     $(this).removeClass('is-invalid');
   });
-
-  // Flash success message using SweetAlert
-  const successMessage = $('#flash-success-message').data('message');
-  if (successMessage) {
-    Swal.fire({
-      icon: 'success',
-      title: 'Success!',
-      text: successMessage,
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'OK'
-    });
-  }
   
 });
     

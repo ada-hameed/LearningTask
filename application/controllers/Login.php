@@ -35,7 +35,7 @@ class Login extends CI_Controller {
 
             $this->session->set_flashdata('toastr_success', 'Login successful!');
             
-            redirect('dashboard'); // You can change this
+            redirect('dashboard'); 
         } else {
             $this->session->set_flashdata('error', 'Invalid Email or Password');
             redirect('login');
