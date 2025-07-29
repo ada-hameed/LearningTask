@@ -5,6 +5,7 @@ class Register extends CI_Controller {
 
     
     public function index() {
+        $this->load->helper('form');
         $this->load->view('register');
     }
 
@@ -21,6 +22,7 @@ class Register extends CI_Controller {
 
         
         if ($this->form_validation->run() == FALSE) {
+             $this->load->helper('form');
         $this->session->set_flashdata('toastr_error', validation_errors());
             redirect('register');
         } 
