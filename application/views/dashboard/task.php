@@ -44,10 +44,10 @@ $this->load->view('layouts/header', ['title' => 'Dashboard']);
                 <tbody>
                   <?php foreach ($tasks as $task): ?>
                     <tr>
-                      <td><?= htmlspecialchars($task->title) ?></td>
-                      <td><?= htmlspecialchars($task->description) ?></td>
-                      <td><?= $task->start_date ?></td>
-                      <td><?= $task->end_date ?></td>
+                      <td><?= ($task->title) ?></td>
+                      <td><?= ($task->description) ?></td>
+                      <td><?= ($task->start_date) ?></td>
+                      <td><?= ($task->end_date) ?></td>
                       <td>
                         <div class="dropdown">
                           <button class="btn btn-sm 
