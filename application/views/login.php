@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Login</title>
+  <title>User Login</title>
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
@@ -81,7 +81,7 @@
 <div class="login-box">
   <div class="card">
     <div class="card-body">
-      <div class="login-title">Admin Login</div>
+      <div class="login-title">User Login</div>
 
       <?php if($this->session->flashdata('error')): ?>
         <div class="alert alert-danger">

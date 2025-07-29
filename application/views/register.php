@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Registration</title>
+  <title>User Registration</title>
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
@@ -80,7 +80,7 @@
 <div class="register-box">
   <div class="card">
     <div class="card-body">
-      <div class="register-title">Admin Registration</div>
+      <div class="register-title">User Registration</div>
      <?php if ($this->session->flashdata('toastr_error')): ?>
   <div class="alert alert-danger" role="alert">
     <?= strip_tags($this->session->flashdata('toastr_error')) ?>
