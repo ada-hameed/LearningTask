@@ -80,8 +80,14 @@
 <div class="register-box">
   <div class="card">
     <div class="card-body">
-     
-   <div class="register-title">Admin Registration</div>
+      <div class="register-title">Admin Registration</div>
+     <?php if ($this->session->flashdata('toastr_error')): ?>
+  <div class="alert alert-danger" role="alert">
+    <?= strip_tags($this->session->flashdata('toastr_error')) ?>
+    
+  </div>
+<?php endif; ?>
+
 
 <form id="registerForm" action="<?= base_url('register/save') ?>" method="post" novalidate>
   <div class="input-group mb-3">
