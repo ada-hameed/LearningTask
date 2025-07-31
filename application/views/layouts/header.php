@@ -60,17 +60,21 @@
 
     <div class="sidebar">
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-   
-<?php
-  $img_path = !empty($profile->profile_image) ? $profile->profile_image : 'assets/dist/img/user2-160x160.jpg';
+          <?php
+$default_img = 'assets/dist/img/user2-160x160.jpg';
+$img_path = isset($profile->profile_image) && trim($profile->profile_image) !== '' ? $profile->profile_image : $default_img;
+$final_img = (strpos($img_path, 'http') === 0) ? $img_path : base_url($img_path);
 ?>
 <div class="image">
-  <img src="<?= base_url($img_path) ?>"
-       alt="Photo"
-       width="30"
-       height="30"
-       style="object-fit: cover; border-radius: 50%;">
+  <img 
+    src="<?= $final_img ?>"
+    onerror="this.onerror=null; this.src='<?= base_url($default_img) ?>';"
+    alt="Photo"
+    width="30"
+    height="30"
+    style="object-fit: cover; border-radius: 50%;">
 </div>
+
 
         <div class="info">
           <a href="#" class="d-block"><?= $profile->name ?></a>
