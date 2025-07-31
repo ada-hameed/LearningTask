@@ -8,24 +8,26 @@ class Task_model extends CI_Model {
     }
 
     public function getTasksByUser($user_id) {
-        return $this->db->get_where('tasks', ['user_id' => $user_id])->result();
+        $this->db->where('user_id', $user_id);
+        $this->db->order_by('sort_order', 'ASC');
+        return $this->db->get('tasks')->result();
     }
-
     public function getTaskById($task_id) {
-        return $this->db->get_where('tasks', ['id' => $task_id])->row();
-    }
+    return $this->db->where('id', $task_id)->get('tasks')->row();
+}
 
     public function updateTask($task_id, $data) {
         return $this->db->where('id', $task_id)->update('tasks', $data);
     }
 
+
     public function deleteTask($task_id) {
-        return $this->db->where('id', $task_id)->delete('tasks');
-    }
-    public function updateStatus($task_id, $status)
-{
-    $this->db->where('id', $task_id);
-    return $this->db->update('tasks', ['status' => $status]);
+    return $this->db->where('id', $task_id)->delete('tasks');
 }
+
+    public function updateStatus($task_id, $status) {
+        $this->db->where('id', $task_id);
+        return $this->db->update('tasks', ['status' => $status]);
+    }
 
 }
