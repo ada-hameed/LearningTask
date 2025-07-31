@@ -49,6 +49,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+$route['login/googleLoginCallback'] = 'login/googleLoginCallback';
+$route['dashboard'] = 'dashboard/index';
 $route['default_controller'] = 'login';
 
 $route['404_override'] = '';

@@ -26,15 +26,24 @@
                 <tbody>
                   <tr>
                     <td>
-  <div style="display: flex; align-items: center; gap: 10px;">
-    <img 
-      src="<?= base_url(!empty($profile->profile_image) ? $profile->profile_image : 'assets/dist/img/user2-160x160.jpg') ?>" 
-      alt="Photo" 
-      width="30" 
-      height="30" 
-      style="object-fit: cover; border-radius: 50%;">
-    <span><?= $profile->name ?></span>
-  </div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <?php
+    $default_img = 'assets/dist/img/user2-160x160.jpg';
+    $img_path = isset($profile->profile_image) && trim($profile->profile_image) !== '' 
+                ? $profile->profile_image 
+                : $default_img;
+    $final_img = (strpos($img_path, 'http') === 0) ? $img_path : base_url($img_path);
+  ?>
+  <img 
+    src="<?= $final_img ?>" 
+    onerror="this.onerror=null; this.src='<?= base_url($default_img) ?>';"
+    alt="Photo" 
+    width="30" 
+    height="30" 
+    style="object-fit: cover; border-radius: 50%;">
+  <span><?= $profile->name ?></span>
+</div>
+
 </td>
 
                     <td><?= $profile->email ?></td>
@@ -90,11 +99,14 @@
 
     <div class="form-group">
       <label>Profile Image (optional)</label><br>
-      <?php if (!empty($profile->profile_image)): ?>
-        <img src="<?= base_url($profile->profile_image) ?>" alt="Profile" width="70" class="mb-2 rounded">
-      <?php else: ?>
-        <img src="<?= base_url('assets/dist/img/user2-160x160.jpg') ?>" alt="Default" width="70" class="mb-2 rounded">
-      <?php endif; ?>
+<?php
+  $default_image = 'assets/dist/img/user2-160x160.jpg';
+  $img_path = !empty($profile->profile_image) ? $profile->profile_image : $default_image;
+  $final_img = (strpos($img_path, 'http') === 0) ? $img_path : base_url($img_path);
+?>
+<img src="<?= $final_img ?>" alt="Profile" width="70" class="mb-2 rounded"
+     onerror="this.onerror=null; this.src='<?= base_url($default_image) ?>';">
+
       <input type="file" name="profile_image" class="form-control-file mt-2">
       <small class="form-text text-muted">Max 2MB. Allowed: JPG, JPEG, PNG.</small>
     </div>

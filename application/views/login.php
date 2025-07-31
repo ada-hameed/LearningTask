@@ -107,6 +107,14 @@
         </div>
 
         <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <!-- Google Login Button -->
+        <div class="text-center mt-3">
+          <a href="<?= base_url('login/google') ?>" class="btn btn-light border d-flex align-items-center justify-content-center" style="border-radius: 8px; font-weight: 500;">
+            <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google" width="20" class="mr-2" style="margin-right: 10px;">
+            Login with Google
+          </a>
+        </div>
+
       </form>
 
       <p class="mt-3 text-center">
